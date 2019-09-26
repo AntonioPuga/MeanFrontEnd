@@ -7,6 +7,15 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
+import { RouterModule, Routes } from '@angular/router';
+import { MatToolbarModule } from '@angular/material';
+
+const routes: Routes = [
+  { path: 'create', component: CreateComponent },
+  { path: 'edit/:id', component: EditComponent },
+  { path: 'list', component: ListComponent },
+  { path: '', redirectTo: '/list', pathMatch: 'full'}
+];
 
 @NgModule({
   declarations: [
@@ -18,7 +27,9 @@ import { EditComponent } from './components/edit/edit.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    RouterModule.forRoot(routes),
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
