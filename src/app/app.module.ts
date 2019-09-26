@@ -9,6 +9,7 @@ import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatToolbarModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   { path: 'create', component: CreateComponent },
@@ -29,7 +30,8 @@ const routes: Routes = [
     AppRoutingModule,
     NoopAnimationsModule,
     RouterModule.forRoot(routes),
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

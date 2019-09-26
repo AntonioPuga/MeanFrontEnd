@@ -1,1 +1,5 @@
-<p>list works!</p>
+<ul>
+    <li *ngFor="let issue of issueList">
+        {{issue | json}}
+    </li>
+</ul>
